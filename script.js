@@ -315,3 +315,31 @@ form.addEventListener('submit', function (e) {
   const url = "https://wa.me/996706154451?text=" + encodeURIComponent(msg);
   window.open(url, "_blank");
 })
+
+// Фотки как в инсте (с оверлеем там и т.д)
+
+const photos = ['src/images/eren1.jpeg', 'src/images/eren2.jpeg', 'src/images/eren3.jpeg', 'src/images/eren4.jpeg']
+const gallery = document.querySelector('#gallery')
+
+photos.forEach(photo => {
+  const item = document.createElement('div');
+  item.className = 'gallery-photo';
+  item.style.backgroundImage = `url('${photo}')`;
+
+
+  gallery.appendChild(item);
+})
+
+const overlay = document.getElementById('overlay');
+const overlayImg = document.getElementById('overlay-img');
+
+document.querySelectorAll('.gallery div').forEach(img => {
+  img.addEventListener('click', () => {
+    overlayImg.src = img.style.backgroundImage.slice(5, -2);
+    overlay.classList.add('active');
+  });
+});
+
+overlay.addEventListener('click', () => {
+  overlay.classList.remove('active');
+});
