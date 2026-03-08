@@ -312,7 +312,7 @@ form.addEventListener('submit', function (e) {
     `Количество гостей: ${quantity.value} \n` +
     `Предпочитаемый столик: ${table.value} \n`;
 
-  const url = "https://wa.me/996706154451?text=" + encodeURIComponent(msg);
+  const url = "https://wa.me/996705774787?text=" + encodeURIComponent(msg);
   window.open(url, "_blank");
 })
 
